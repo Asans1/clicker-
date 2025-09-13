@@ -16,7 +16,9 @@ class Level:
         self.level = 1
 
     def update(self, score):
-        if score >= 20:
+        if score >= 30:
+            self.level = 4
+        elif score >= 20:
             self.level = 3
         elif score >= 10:
             self.level = 2
@@ -75,8 +77,12 @@ class Game:
             self.level_message.config(text="Отлично! Ты поднялся на 2 уровень! ")
             self.root.configure(bg="lightgreen")
         elif current_level == 3:
-            self.level_message.config(text="Вау! Максимальный уровень! ")
+            self.level_message.config(text="Вау! 3 уровень! ")
             self.root.configure(bg="lightblue")
+        elif current_level == 4:
+            self.level_message.config(text="Отлично! Ты поднялся на 4 уровень! ")
+            self.root.configure(bg="lightdark")
+            
 
 
 def main():
