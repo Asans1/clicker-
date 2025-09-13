@@ -1,5 +1,25 @@
 import tkinter as tk 
 
+class Player:
+    def __init__(self):
+        self.score = 0 
+
+    def add_score(self):
+        self.score += 1
+
+class Level:
+    def __init__(self):
+        self.level = 1
+
+    def update(self ,score):
+        if score >= 20:
+            self.level = 3 
+        elif score >= 10:
+            self.level = 2
+        else:
+            self.level = 1 
+        return self.level
+
 def main():
     root =tk.Tk()
     root.title("Clicker")
